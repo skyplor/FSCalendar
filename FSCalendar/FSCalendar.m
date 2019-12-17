@@ -153,11 +153,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     NSString *currentCalendarIdentifier = calendar.calendarIdentifier;
 
     if (!_gregorian) {
-        if ([self isBuddhistCalendar:currentCalendarIdentifier]) {
-            _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierBuddhist];
-        } else {
-            _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        }
+        _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:currentCalendarIdentifier];
     }
 
     if (!_formatter) {
